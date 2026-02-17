@@ -30,7 +30,7 @@ const Planner = () => {
                         departments={departments}
                         times={times}
                         shifts={filteredShifts}
-                        currentDate={currentDate} // currentDate is already lifted and passed
+                        currentDate={currentDate}
                     />
                 </HStack>
             </Box>

@@ -12,7 +12,6 @@ import {
     MenuItem
 } from '@chakra-ui/react'
 import {
-    Calendar,
     ArrowLeft2,
     ArrowRight2,
     Filter,

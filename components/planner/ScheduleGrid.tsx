@@ -11,6 +11,7 @@ import {
     DialogRoot as Dialog,
     DialogContent,
     DialogHeader,
+    DialogPositioner,
     DialogBody,
     DialogCloseTrigger,
     DialogTitle,
@@ -132,65 +133,70 @@ export const ScheduleGrid = ({ departments, times, shifts, currentDate }: Schedu
             <Dialog open={isPopupOpen} onOpenChange={(details) => setIsPopupOpen(details.open)}>
                 <DialogBackdrop />
                 <Portal>
-                    <DialogContent bg="white" borderRadius="20px" p="6" maxW="500px">
-                        <DialogHeader p="0" mb="6">
-                            <HStack justify="space-between">
-                                <DialogTitle fontSize="24px" fontWeight="700" color="#1A1A1A">
-                                    {formattedDate}
-                                </DialogTitle>
-                                <DialogCloseTrigger asChild>
-                                    <IconButton variant="ghost" size="sm">
-                                        <CloseCircle size={24} color="#64748B" />
-                                    </IconButton>
-                                </DialogCloseTrigger>
-                            </HStack>
-                        </DialogHeader>
+                    <DialogPositioner>
+                        <DialogContent bg="white" borderRadius="24px" p="6" maxW="480px">
+                            <DialogHeader p="0" mb="6">
+                                <HStack justify="space-between" align="center">
+                                    <DialogTitle fontSize="20px" fontWeight="700" color="#1A1A1A">
+                                        {formattedDate}
+                                    </DialogTitle>
+                                    <DialogCloseTrigger asChild>
+                                        <IconButton variant="ghost" size="sm" borderRadius="full">
+                                            <CloseCircle size={24} color="#64748B" />
+                                        </IconButton>
+                                    </DialogCloseTrigger>
+                                </HStack>
+                            </DialogHeader>
 
-                        <DialogBody p="0">
-                            <VStack align="stretch" gap="8">
-                                {selectedSlot && (
-                                    <VStack align="stretch" gap="4">
-                                        <Text fontWeight="bold" fontSize="18px" color="#1A1A1A">{selectedSlot.time}</Text>
-                                        <VStack align="stretch" gap="3">
-                                            {selectedSlot.shifts.map((s: any) => (
-                                                <HStack
-                                                    key={s.id}
-                                                    p="4"
-                                                    borderRadius="16px"
-                                                    border="1px solid"
-                                                    borderColor={s.borderColor || "#E9EDF5"}
-                                                    bg={s.bgColor || "white"}
-                                                    gap="4"
-                                                >
-                                                    <Box
-                                                        w="48px"
-                                                        h="48px"
-                                                        borderRadius="full"
-                                                        bg="white"
-                                                        border="1px solid"
-                                                        borderColor="#E9EDF5"
-                                                        display="flex"
-                                                        alignItems="center"
-                                                        justifyContent="center"
-                                                        flexShrink={0}
-                                                    >
-                                                        <Text fontSize="14px" fontWeight="bold" color="#64748B">{s.initials}</Text>
-                                                    </Box>
-                                                    <VStack align="start" gap="1" flex="1">
-                                                        <HStack gap="2">
-                                                            <Text fontWeight="bold" fontSize="16px" color="#1A1A1A">{s.title}</Text>
-                                                            <Text color="gray.500" fontSize="xs">{s.startTime} - {s.endTime}</Text>
+                            <DialogBody p="0">
+                                <VStack align="stretch" gap="6">
+                                    {selectedSlot && (
+                                        <VStack align="stretch" gap="6">
+                                            <VStack align="stretch" gap="2">
+                                                <Text fontWeight="bold" fontSize="16px" color="#1A1A1A">{selectedSlot.time}</Text>
+                                                <VStack align="stretch" gap="3">
+                                                    {selectedSlot.shifts.map((s: any) => (
+                                                        <HStack
+                                                            key={s.id}
+                                                            p="4"
+                                                            borderRadius="12px"
+                                                            border="1px solid"
+                                                            borderColor={s.borderColor || "#E9EDF5"}
+                                                            bg={s.bgColor || "white"}
+                                                            gap="4"
+                                                            align="center"
+                                                        >
+                                                            <Box
+                                                                w="40px"
+                                                                h="40px"
+                                                                borderRadius="full"
+                                                                bg="white"
+                                                                border="1px solid"
+                                                                borderColor="#E9EDF5"
+                                                                display="flex"
+                                                                alignItems="center"
+                                                                justifyContent="center"
+                                                                flexShrink={0}
+                                                            >
+                                                                <Text fontSize="12px" fontWeight="bold" color="#64748B">{s.initials}</Text>
+                                                            </Box>
+                                                            <VStack align="start" gap="0.5" flex="1">
+                                                                <HStack gap="2" align="baseline">
+                                                                    <Text fontWeight="700" fontSize="15px" color="#1A1A1A">{s.title}</Text>
+                                                                    <Text color="#64748B" fontSize="12px" fontWeight="500">{s.startTime} - {s.endTime}</Text>
+                                                                </HStack>
+                                                                <Text color={s.color} fontWeight="600" fontSize="13px">{s.staffName}</Text>
+                                                            </VStack>
                                                         </HStack>
-                                                        <Text color={s.color} fontWeight="600" fontSize="14px">{s.staffName}</Text>
-                                                    </VStack>
-                                                </HStack>
-                                            ))}
+                                                    ))}
+                                                </VStack>
+                                            </VStack>
                                         </VStack>
-                                    </VStack>
-                                )}
-                            </VStack>
-                        </DialogBody>
-                    </DialogContent>
+                                    )}
+                                </VStack>
+                            </DialogBody>
+                        </DialogContent>
+                    </DialogPositioner>
                 </Portal>
             </Dialog>
         </Box>
