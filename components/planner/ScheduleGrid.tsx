@@ -56,7 +56,6 @@ export const ScheduleGrid = ({ departments, times, shifts, currentDate }: Schedu
         >
             <Box overflowX="auto" flex="1" display="flex" flexDirection="column">
                 <Box minW={`${100 + departments.length * 200}px`}>
-                    {/* Header */}
                     <Grid templateColumns={`100px repeat(${departments.length}, 1fr)`} bg="#F2F5FF">
                         <Box borderRight="1px solid #D9E5F2" p="3">
                             <Text fontSize="xs" fontWeight="bold" color="#5653FC" textAlign="center">Days</Text>
@@ -75,16 +74,13 @@ export const ScheduleGrid = ({ departments, times, shifts, currentDate }: Schedu
                         ))}
                     </Grid>
 
-                    {/* Grid Body */}
                     <Box flex="1" overflowY="auto" position="relative">
                         {times.map((time) => (
                             <Grid key={time} templateColumns={`100px repeat(${departments.length}, 1fr)`} minH="120px" borderBottom="1px solid #F0F4F8">
-                                {/* Time Label */}
                                 <Box borderRight="1px solid #D9E5F2" p="3">
                                     <Text fontSize="xs" fontWeight="bold" color="gray.400" textAlign="center">{time}</Text>
                                 </Box>
 
-                                {/* Cells */}
                                 {departments.map((dept, i) => {
                                     const departmentShifts = shifts.filter(s => s.department === dept && s.startTime === time)
 

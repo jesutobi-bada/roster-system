@@ -10,7 +10,7 @@ import { Box, HStack } from '@chakra-ui/react'
 import dummyData from '@/data/dummy.json'
 
 const Planner = () => {
-    const [view, setView] = useState(dummyData.appState.currentView) // 'live' or 'planner'
+    const [view, setView] = useState(dummyData.appState.currentView)
     const [currentDate, setCurrentDate] = useState(dummyData.appState.selectedDate)
     const [shifts, setShifts] = useState(dummyData.shifts)
     const [staff] = useState(dummyData.staff)

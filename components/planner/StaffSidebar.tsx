@@ -231,7 +231,6 @@ export const StaffSidebar = ({ staff }: StaffSidebarProps) => {
                 </Tabs.Content>
             </Tabs.Root>
 
-            {/* Full-page Modal / Expanded View */}
             {isExpanded && (
                 <Portal>
                     <Box
