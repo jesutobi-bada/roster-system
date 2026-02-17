@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 import { Sidebar } from './Sidebar'
 import { Navbar } from './Navbar'
@@ -10,6 +10,8 @@ interface MainLayoutProps {
 }
 
 export const MainLayout = ({ children, pageName }: MainLayoutProps) => {
+    const [isCollapsed, setIsCollapsed] = React.useState(false)
+
     useEffect(() => {
         if (pageName) {
             document.title = `${pageName} | Excellent Care Clinics`
@@ -17,9 +19,9 @@ export const MainLayout = ({ children, pageName }: MainLayoutProps) => {
     }, [pageName])
 
     return (
-        <Flex minH="100vh" bg="#F9FAFB" color="#242424">
-            <Sidebar />
-            <Box flex="1" ml="280px">
+        <Flex minH="100vh" bg="#F9FAFB" color="#242424" overflowX="hidden">
+            <Sidebar isCollapsed={isCollapsed} onToggle={() => setIsCollapsed(!isCollapsed)} />
+            <Box flex="1" ml={isCollapsed ? "80px" : "280px"} transition="margin-left 0.2s" minW="0">
                 <Navbar pageName={pageName} />
                 <Box p="8">
                     {children}

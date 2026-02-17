@@ -1,0 +1,112 @@
+{
+    "departments": [
+        "Behandelingkamer1",
+        "Management",
+        "Bijzonderheden-Verlof-Cursus-...",
+        "Financien"
+    ],
+    "staff": [
+        {
+            "id": "staff-3-1",
+            "name": "Elijah Oyin",
+            "initials": "EO",
+            "totalHours": 1158.0,
+            "weeklyHours": 38.0,
+            "status": "On leave",
+            "leaveDates": "Jan 8 - Jan 15",
+            "avatarColor": "gray.100"
+        },
+        {
+            "id": "staff-2",
+            "name": "Diane Lane",
+            "initials": "DL",
+            "totalHours": 1158.0,
+            "weeklyHours": 38.0,
+            "status": "On leave",
+            "leaveDates": "Jan 12 - Jan 28",
+            "avatarColor": "gray.100"
+        },
+        {
+            "id": "staff-3-2",
+            "name": "Elijah Oyin",
+            "initials": "EO",
+            "totalHours": 1158.0,
+            "weeklyHours": 38.0,
+            "status": "On leave",
+            "leaveDates": "Jan 12 - Jan 20",
+            "avatarColor": "gray.100"
+        },
+        {
+            "id": "staff-1",
+            "name": "Haico De Gast",
+            "initials": "HG",
+            "totalHours": 1158.0,
+            "weeklyHours": 38.0,
+            "status": "On leave",
+            "leaveDates": "Jan 2 - Jan 9",
+            "avatarColor": "gray.100"
+        }
+    ],
+    "shifts": [
+        {
+            "id": "shift-1",
+            "staffId": "staff-1",
+            "staffName": "Haico de Gast",
+            "initials": "HG",
+            "department": "Behandelingkamer1",
+            "type": "surgery",
+            "title": "Surgery",
+            "startTime": "11:00",
+            "endTime": "13:00",
+            "color": "#E67E22",
+            "bgColor": "#FFF9F5",
+            "borderColor": "#FFD6B3",
+            "height": "200px",
+            "date": "2025-09-08"
+        },
+        {
+            "id": "shift-2",
+            "staffId": "staff-2",
+            "staffName": "Diane Lane",
+            "initials": "DL",
+            "department": "Behandelingkamer1",
+            "type": "pain",
+            "title": "Pijnspecialist",
+            "startTime": "11:00",
+            "endTime": "12:00",
+            "color": "#27AE60",
+            "bgColor": "#F5FFF9",
+            "borderColor": "#B3FFD6",
+            "height": "200px",
+            "date": "2025-09-08"
+        },
+        {
+            "id": "shift-3",
+            "staffId": "staff-2",
+            "staffName": "Diane Lane",
+            "initials": "DL",
+            "department": "Bijzonderheden-Verlof-Cursus-...",
+            "type": "pain",
+            "title": "Pijnspecialist",
+            "startTime": "11:30",
+            "endTime": "13:30",
+            "color": "#7F8C8D",
+            "bgColor": "#FCFCF4",
+            "borderColor": "#EBEBC5",
+            "height": "300px"
+        }
+    ],
+    "appState": {
+        "currentView": "planner",
+        "selectedDate": "2025-09-08",
+        "isSidebarCollapsed": false
+    },
+    "times": [
+        "11:00",
+        "11:30",
+        "12:00",
+        "12:30",
+        "13:00",
+        "13:30"
+    ]
+}

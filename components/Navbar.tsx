@@ -46,7 +46,7 @@ export const Navbar = ({ pageName }: NavbarProps) => {
                     </IconButton>
                     <Box position="relative">
                         <IconButton variant="ghost" aria-label="Notifications">
-                            <Notification size={24} color="gray.500" />
+                            <Notification size={24} color="#64748B" variant="Outline" />
                         </IconButton>
                         <Box
                             position="absolute"
